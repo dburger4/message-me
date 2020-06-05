@@ -30,6 +30,7 @@ class SessionsController < ApplicationController
     if logged_in?
       flash[:error] = "You are already logged in"
       redirect_to login_path
+    end
   end
 
 end
