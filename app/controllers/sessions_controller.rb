@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:session][:password])
       # good
       session[:user_id] = user.id
+      flash[:success] = "Welcome to MessageMe, #{user.username}"
       redirect_to root_path
     else
       flash.now[:error] = "There was something wrong with your login information"
